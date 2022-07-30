@@ -73,7 +73,7 @@ function displayForecast(response){
 
 function getForecast (coordinates){
     let apiKey = "653f21a1a63480b1daa3161cac712581";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayForecast);
     
 }
@@ -105,7 +105,7 @@ function displayTemperature(response){
 
 function search(city){
     let apiKey = "653f21a1a63480b1daa3161cac712581";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(displayTemperature);
 
 }
@@ -118,34 +118,13 @@ function handleSubmit(event){
 
 }
 
-function displayFahrenheitTemperature(event){
-    event.preventDefault();     
-    let temperatureElement = document.querySelector("#temperature");
-    celciusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function displayCelciusTemperature(event){
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    celciusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    temperatureElement.innerHTML = Math.round(celciusTemperature);
 
 
-}
 
 let celciusTemperature = null;
 
 let form = document.querySelector("#sear-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", displayCelciusTemperature);
 
 search("Paris");

@@ -55,11 +55,11 @@ li:first-letter {
 
 
 .weather-app{
-    background-color: rgb(255, 249, 246);
+    background-color: rgb(255, 255, 255);
     padding: 20px;
-    border: 1px solid rgba(234, 218, 215, 0.858) ;
+    border: 1px solid rgb(240, 238, 238) ;
     border-radius: 6px;
-    box-shadow: 5px 2px 2px rgba(40, 40, 40, 0.019);
+    box-shadow: 2px 2px 2px rgba(40, 40, 40, 0.032)
 }
 
 .overview{

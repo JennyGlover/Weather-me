@@ -121,9 +121,10 @@ width:64px;
 }
 
 .search-button{
-    background-color: rgb(236,110,76);
-    border-color: rgb(236,110,76);
+    background-color: rgb(19, 77, 192);
+    border-color: rgb(19,77,192);
 }
+
 
 .form-control {
     border-color: rgba(234, 218, 215, 0.858); 

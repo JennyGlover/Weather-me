@@ -44,9 +44,9 @@ li:first-letter {
 }
 
 .temp{
+    position: relative;
+    top:20px;
 
-    position: fixed;
-    
 
 }
 
